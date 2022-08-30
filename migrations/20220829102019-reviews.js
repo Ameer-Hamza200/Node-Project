@@ -2,16 +2,12 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("reviews", {
       id: {
-        allowNull: false,
+        // allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      adminId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
 
-      },
       userName: {
         allowNull: false,
         type: Sequelize.STRING,
@@ -19,7 +15,7 @@ module.exports = {
       email: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique: true,
+        // unique: true,
       },
       feedback: {
         allowNull: false,
@@ -39,14 +35,10 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("reviews", {
       id: {
-        allowNull: false,
+        // allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
-      },
-      adminId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
       },
       userName: {
         allowNull: false,
@@ -55,18 +47,18 @@ module.exports = {
       email: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique: true,
+        // unique: true,
       },
       feedback: {
         allowNull: false,
         type: Sequelize.STRING,
       },
       createdAt: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.DATE
       }
     });

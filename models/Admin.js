@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const {
   Model
 } = require("sequelize");
@@ -12,75 +13,76 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate() {
-      // define association here
-      db.Admin.hasMany(db.review, { foreignKey: "adminId" });
-    }
+    // static associate(models) {
+    //   // define association here
+    //   db.Admin.hasMany(models.review, { foreignKey: "adminId" });
+    // }
   }
   Admin.init({
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     userName: {
       allowNull: false,
-      type: sequelize.STRING
+      type: DataTypes.STRING
     },
     photo: {
       allowNull: false,
-      type: sequelize.TEXT,
+      type: DataTypes.TEXT,
     },
     email: {
       allowNull: false,
-      type: sequelize.STRING,
-      unique: true
+      type: DataTypes.STRING,
+      // unique: true
     },
     password: {
       allowNull: false,
-      type: sequelize.STRING,
+      type: DataTypes.STRING,
     },
     welcomeLine: {
       allowNull: false,
-      type: sequelize.STRING
+      type: DataTypes.STRING
     },
     about: {
       allowNull: false,
-      type: sequelize.TEXT
+      type: DataTypes.TEXT
     },
     jobStatus: {
       allowNull: false,
-      type: sequelize.STRING
+      type: DataTypes.STRING
     },
     contact: {
       allowNull: false,
-      type: sequelize.INTEGER,
+      type: DataTypes.INTEGER,
     },
     catagories: {
       allowNull: false,
-      type: sequelize.STRING
+      type: DataTypes.STRING
     },
     projectsList: {
       allowNull: false,
-      type: sequelize.STRING
+      type: DataTypes.STRING
     },
     recentProject: {
       allowNull: false,
-      type: sequelize.STRING
+      type: DataTypes.STRING
     },
     createdAt: {
-      allowNull: false,
-      type: sequelize.DATE
+      // allowNull: true,
+      type: DataTypes.DATE
     },
     updatedAt: {
-      allowNull: false,
-      type: sequelize.DATE
+      // allowNull: true,
+      type: DataTypes.DATE
     }
 
   }, {
     sequelize,
     modelName: "Admin",
+    tableName: "admins",
   });
   return Admin;
 };

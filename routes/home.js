@@ -6,7 +6,15 @@ const homeController = require("../controller/home");
 const router = express.Router();
 
 router.get("/", homeController.index);
-router.post("/register", homeController.create_admin);
+// Create profile
+router.post("/registerProfile", homeController.create_admin);
+// Display profile
+router.get("/profile", homeController.profileData);
+// // Update profile Data
+router.post("/updateProfile", homeController.updateProfile);
+// // Delete Profile
+// router.delete("./deleteProfile", homeController.deleteProfile);
+// // User Feedback
 router.post("/review", homeController.feedback);
 
 module.exports = router;

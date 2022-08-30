@@ -1,7 +1,7 @@
 const {
   Model
 } = require("sequelize");
-const db = require("./index");
+// const db = require("./index");
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (sequelize, DataTypes) => {
@@ -11,44 +11,45 @@ module.exports = (sequelize, DataTypes) => {
        * This method is not a part of Sequelize lifecycle.
        * The `models/index` file will call this method automatically.
        */
-    static associate() {
-      // define association here
-      db.Review.hasOne(db.Admin, { foreignKey: "adminId", as: "admin" });
-    }
+    // static associate(models) {
+    //   // define association here
+    //   db.Review.hasOne(models.Admin, { foreignKey: "adminId", as: "admin" });
+    // }
   }
   Review.init({
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
 
     userName: {
       allowNull: false,
-      type: sequelize.STRING,
+      type: DataTypes.STRING,
     },
     email: {
       allowNull: false,
-      type: sequelize.STRING,
-      unique: true,
+      type: DataTypes.STRING,
+      // unique: true,
     },
     feedback: {
       allowNull: false,
-      type: sequelize.STRING,
+      type: DataTypes.STRING,
     },
     createdAt: {
-      allowNull: false,
-      type: sequelize.DATE
+      // allowNull: false,
+      type: DataTypes.DATE
     },
     updatedAt: {
-      allowNull: false,
-      type: sequelize.DATE
+      // allowNull: false,
+      type: DataTypes.DATE
     }
 
   }, {
     sequelize,
     modelName: "Review",
+    tableName: "reviews",
   });
   return Review;
 };
