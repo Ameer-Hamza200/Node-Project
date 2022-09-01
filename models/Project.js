@@ -1,7 +1,7 @@
 const {
   Model
 } = require("sequelize");
-const db = require("./index");
+// const db = require("./index");
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (sequelize, DataTypes) => {
@@ -11,10 +11,8 @@ module.exports = (sequelize, DataTypes) => {
            * This method is not a part of Sequelize lifecycle.
            * The `models/index` file will call this method automatically.
         //    */
-    static associate() {
-      db.Project.belongsTo(db.Category);
-      db.Category.hasMany(db.Project);
-    }
+    // static associate() {
+    // }
   }
   Project.init({
     id: {

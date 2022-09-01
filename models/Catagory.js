@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
       //    */
     static associate(models) {
-     
+      Category.hasMany(models.Project, { foreignKey: "categoryId" });
     }
   }
   Category.init({
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    stack: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
 

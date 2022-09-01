@@ -7,7 +7,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      stack: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
 
@@ -34,7 +34,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      stack: {
+      name: {
         type: Sequelize.STRING,
         allowNull: true,
 

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 const sequelize = require("sequelize");
 
 module.exports = {
@@ -8,6 +9,13 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
+      },
+      categoryId: {
+        type: Sequelize.INTEGER,
+        refrence: {
+          model: "Category",
+          key: "id"
+        },
       },
       title: {
         type: Sequelize.STRING,

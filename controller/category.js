@@ -6,7 +6,7 @@ module.exports = {
   async category(req, res) {
     try {
       const newCatagory = {
-        stack: req.body.stack,
+        name: req.body.name,
         description: req.body.description,
         createdAt: new Date(),
         updatedAt: new Date(),

@@ -7,8 +7,8 @@ module.exports = {
   async addLinks(req, res) {
     try {
       const newLinks = {
-        siteName: req.body.siteName,
-        profileAdress: req.body.profileAdress,
+        appName: req.body.appName,
+        url: req.body.url,
         createdAt: new Date(),
         updatedAt: new Date(),
       };

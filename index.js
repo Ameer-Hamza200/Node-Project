@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // all new routes will be here
 app.use("/api", homeRoutes);
-
 // server configuration
 const server = http.createServer(app);
 const PORT = process.env.SERVER_PORT || 5000;
