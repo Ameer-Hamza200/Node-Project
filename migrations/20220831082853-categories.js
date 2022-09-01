@@ -1,71 +1,54 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("reviews", {
+    await queryInterface.createTable("categories", {
       id: {
         // allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      adminId: {
-        type: Sequelize.INTEGER,
+      stack: {
+        type: Sequelize.STRING,
         allowNull: false,
 
       },
-
-      userName: {
-        allowNull: false,
+      description: {
         type: Sequelize.STRING,
-      },
-      email: {
-        allowNull: false,
-        type: Sequelize.STRING,
-        // unique: true,
-      },
-      feedback: {
-        allowNull: false,
-        type: Sequelize.STRING,
+        allowNull: true,
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
+
     });
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("reviews", {
+    await queryInterface.dropTable("categories", {
       id: {
-        // allowNull: false,
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userName: {
-        allowNull: false,
+      stack: {
         type: Sequelize.STRING,
+        allowNull: true,
+
       },
-      email: {
-        allowNull: false,
+      description: {
         type: Sequelize.STRING,
-        // unique: true,
-      },
-      feedback: {
-        allowNull: false,
-        type: Sequelize.STRING,
+        allowNull: true,
       },
       createdAt: {
-        // allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        // allowNull: false,
         type: Sequelize.DATE
       }
     });
-  },
+  }
 };

@@ -10,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
        * Helper method for defining associations.
        * This method is not a part of Sequelize lifecycle.
        * The `models/index` file will call this method automatically.
-       */
-    // static associate(models) {
-    //   // define association here
-    //   db.Review.hasOne(models.Admin, { foreignKey: "adminId", as: "admin" });
-    // }
+    //    */
+    static associate(models) {
+      // define association here
+      Review.belongsTo(models.Admin, { foreignKey: "adminId", as: "admin" });
+    }
   }
   Review.init({
     id: {
@@ -23,7 +23,11 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    adminId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
 
+    },
     userName: {
       allowNull: false,
       type: DataTypes.STRING,

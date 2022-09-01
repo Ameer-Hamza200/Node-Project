@@ -1,71 +1,53 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("reviews", {
+    await queryInterface.createTable("socialLinks", {
       id: {
-        // allowNull: false,
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      adminId: {
-        type: Sequelize.INTEGER,
+      appName: {
+        type: Sequelize.STRING,
         allowNull: false,
 
       },
-
-      userName: {
-        allowNull: false,
+      url: {
         type: Sequelize.STRING,
-      },
-      email: {
-        allowNull: false,
-        type: Sequelize.STRING,
-        // unique: true,
-      },
-      feedback: {
-        allowNull: false,
-        type: Sequelize.STRING,
+        allowNull: true,
       },
       createdAt: {
-        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("reviews", {
+    await queryInterface.dropTable("socialLinks", {
       id: {
-        // allowNull: false,
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userName: {
-        allowNull: false,
+      appName: {
         type: Sequelize.STRING,
+        allowNull: false,
+
       },
-      email: {
-        allowNull: false,
+      url: {
         type: Sequelize.STRING,
-        // unique: true,
-      },
-      feedback: {
-        allowNull: false,
-        type: Sequelize.STRING,
+        allowNull: true,
       },
       createdAt: {
-        // allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        // allowNull: false,
         type: Sequelize.DATE
       }
     });
-  },
+  }
 };

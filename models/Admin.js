@@ -2,8 +2,6 @@
 const {
   Model
 } = require("sequelize");
-const db = require("./index");
-db.review = require("./Review");
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (sequelize, DataTypes) => {
@@ -13,10 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    // static associate(models) {
-    //   // define association here
-    //   db.Admin.hasMany(models.review, { foreignKey: "adminId" });
-    // }
+    static associate(models) {
+      // define association here
+      // Admin.hasMany(models.Review, { foreignKey: "adminId" });
+      // Admin.hasMany(models.Category, { foreignKey: "id" });
+      // Admin.hasMany(models.Sociallink, { foreignKey: "id" });
+      // Admin.hasMany(models.Projects, { foreignKey: "id" });
+    }
   }
   Admin.init({
     id: {
@@ -57,18 +58,6 @@ module.exports = (sequelize, DataTypes) => {
     contact: {
       allowNull: false,
       type: DataTypes.INTEGER,
-    },
-    catagories: {
-      allowNull: false,
-      type: DataTypes.STRING
-    },
-    projectsList: {
-      allowNull: false,
-      type: DataTypes.STRING
-    },
-    recentProject: {
-      allowNull: false,
-      type: DataTypes.STRING
     },
     createdAt: {
       // allowNull: true,

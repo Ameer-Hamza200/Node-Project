@@ -18,7 +18,7 @@ module.exports = {
       email: {
         allowNull: false,
         type: Sequelize.STRING,
-        // unique: true
+        unique: true
       },
       password: {
         allowNull: false,
@@ -39,18 +39,6 @@ module.exports = {
       contact: {
         allowNull: false,
         type: Sequelize.INTEGER,
-      },
-      catagories: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      projectsList: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      recentProject: {
-        allowNull: false,
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -72,6 +60,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      adminId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+
+      },
       userName: {
         allowNull: false,
         type: Sequelize.STRING
@@ -83,7 +76,7 @@ module.exports = {
       email: {
         allowNull: false,
         type: Sequelize.STRING,
-        // unique: true
+        unique: true
       },
       password: {
         allowNull: false,
@@ -104,18 +97,6 @@ module.exports = {
       contact: {
         allowNull: false,
         type: Sequelize.INTEGER,
-      },
-      catagories: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      projectsList: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      recentProject: {
-        allowNull: false,
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
